@@ -299,7 +299,7 @@ const AaaThree = (function () {
 
         // load a image resource
         loader.load(
-            `${SERVER_URL}/static/${photoInfo.thumbnail_path}`,
+            photoInfo.thumbnail_path,
             function (imageBitmap) {
                 const photoObject = new THREE.Object3D();
 
@@ -396,7 +396,7 @@ const AaaThree = (function () {
         frameShape.holes = [frameHole]
 
         const extrudeSettings = {
-            amount: 0.5,
+            depth: 0.5,
             bevelEnabled: false,
             bevelSegments: 1,
             steps: 1,

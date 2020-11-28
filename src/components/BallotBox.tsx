@@ -18,33 +18,34 @@ function BallotBox({ close }: BallotBoxProps) {
     const [didVoted, setDidVoted] = useState(false);
     const [selectedBallot, setSelectedBallot] = useState(0);
 
-    useEffect(() => {
-        fetch();
-    }, [])
+    // useEffect(() => {
+    //     fetch();
+    // }, [])
 
-    const fetch = function () {
-        UserService.checkUserDidVoted()
-            .then((res) => {
-                setDidVoted(res.data.didVoted)
-            })
-            .catch((err) => {
-                console.error(err)
-            })
-    }
+    // const fetch = function () {
+    //     UserService.checkUserDidVoted()
+    //         .then((res) => {
+    //             setDidVoted(res.data.didVoted)
+    //         })
+    //         .catch((err) => {
+    //             console.error(err)
+    //         })
+    // }
 
     const submit = function () {
-        if (!selectedBallot) {
-            alert("투표할 사진을 선택해주세요.")
-        }
-        PhotoService.vote({
-            photo_id: selectedBallot
-        })
-            .then(() => {
-                fetch();
-            })
-            .catch((err) => {
-                console.error(err)
-            })
+        alert("사진전이 종료되서 투표를 하실 수 없습니다.")
+        // if (!selectedBallot) {
+        //     alert("투표할 사진을 선택해주세요.")
+        // }
+        // PhotoService.vote({
+        //     photo_id: selectedBallot
+        // })
+        //     .then(() => {
+        //         fetch();
+        //     })
+        //     .catch((err) => {
+        //         console.error(err)
+        //     })
     }
 
 
@@ -54,7 +55,7 @@ function BallotBox({ close }: BallotBoxProps) {
                 <div key={photo.photo_id}
                     className={`ballot-list-unit${selectedBallot === photo.photo_id ? " selected" : ""}`}
                     onClick={() => setSelectedBallot(photo.photo_id)}>
-                    <img className="blur-img" src={`${SERVER_URL}/static/${photo.thumbnail_path}`} />
+                    <img className="blur-img" src={photo.thumbnail_path} />
                 </div>
             )
         })

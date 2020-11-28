@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import './welcome.scss';
-import btn_google from '../assets/imgs/btn_google.png';
+// import btn_google from '../assets/imgs/btn_google.png';
 import background from '../assets/imgs/background.jpg';
 import poster from '../assets/imgs/poster.jpg';
 import PrivacyPolicy from './PrivacyPolicy';
+import { Link } from 'react-router-dom';
 
 function Welcome() {
 
     const [isHome, setIsHome] = useState(true);
     const [isViewPolicy, setIsViewPolicy] = useState(false);
 
-    const REDIRECT_URL = process.env.NODE_ENV === "production"
-        ? `https://exhibition.snuaaa.net/auth/google`
-        : `http://localhost:3000/auth/google`
+    // const REDIRECT_URL = process.env.NODE_ENV === "production"
+    //     ? `https://exhibition.snuaaa.net/auth/google`
+    //     : `http://localhost:3000/auth/google`
 
     return (
         <div className="welcome-wrapper">
@@ -21,7 +22,7 @@ function Welcome() {
             </div>
             <div className={`intro${isHome ? " hidden" : ""}`}>
                 <div className="background-cover">
-                <img className="background-img" src={background} />
+                    <img className="background-img" src={background} />
                     <div className="intro-msg">
                         <p>
                             전세계적 팬데믹은 많은 사람들을 불안과 혼란 속에 빠뜨렸습니다.
@@ -40,7 +41,11 @@ function Welcome() {
 
                     </div>
                     <div className="intro-wrapper">
-                        {
+                        <p>사진전이 종료되어 자유롭게 입장하실 수 있지만 방명록, MVP 투표 기능이 제한됩니다.</p>
+                        <Link to={'/hall'}>
+                            <button className="intro-btn-enter">입장</button>
+                        </Link>
+                        {/* {
                             isViewPolicy
                                 ?
                                 <PrivacyPolicy close={() => setIsViewPolicy(false)} />
@@ -56,7 +61,7 @@ function Welcome() {
                                         <p onClick={() => setIsViewPolicy(true)}>개인정보 처리방침</p>
                                     </div>
                                 </>
-                        }
+                        } */}
                     </div>
                 </div>
             </div>
