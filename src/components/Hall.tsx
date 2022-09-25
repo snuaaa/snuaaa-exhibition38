@@ -2,6 +2,7 @@ import React, { useRef, useEffect, MouseEvent, TouchEvent, useState } from 'reac
 import AaaThree from '../three/AaaThree';
 import PhotoService from '../services/PhotoService';
 import PhotoDetail from './PhotoDetail';
+import photoData from '../data/photoData'
 import usePhoto from '../hooks/usePhoto';
 import './hall.scss';
 import GuestBook from './GuestBook';
@@ -27,11 +28,13 @@ function Hall() {
             document.addEventListener('keydown', onKeyDown, false);
             document.addEventListener('keyup', onKeyUp, false)
 
-            PhotoService.retrieveAll()
-                .then((photos) => setPhotos(photos.data))
-                .catch((err) => {
-                    console.error(err)
-                })
+            setPhotos(photoData);
+
+            // PhotoService.retrieveAll()
+            //     .then((photos) => setPhotos(photos.data))
+            //     .catch((err) => {
+            //         console.error(err)
+            //     })
         }
     }, [])
 

@@ -35,14 +35,14 @@ function PhotoDetail({ close }: PhotoDetailProps) {
         <div className="photo-detail">
             <div className={`photo-detail-left${isFullscreen ? " full" : ""}`} onContextMenu={(e) => e.preventDefault()} ref={imgRef}>
                 <div className="blur-img-wrp">
-                    <img className="blur-img" src={`${SERVER_URL}/static/${selectedPhoto.thumbnail_path}`} />
+                    <img className="blur-img" src={selectedPhoto.thumbnail_path} />
                 </div>
                 <div className="photo-detail-img-wrp">
                     {
                         selectedPhoto.is_video ?
-                            <video src={`${SERVER_URL}/static/${selectedPhoto.file_path}`} autoPlay />
+                            <video src={selectedPhoto.file_path} autoPlay />
                             :
-                            <img src={`${SERVER_URL}/static/${selectedPhoto.file_path}`} />
+                            <img src={selectedPhoto.file_path} />
                     }
                 </div>
                 <button className="photo-detail-btn close" onClick={close}>
