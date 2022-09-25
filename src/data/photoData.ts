@@ -62,8 +62,8 @@ import img31 from '../assets/photos/31.jpeg';
 import img31_th from '../assets/photos/31_th.jpeg';
 import img32 from '../assets/photos/32.jpeg';
 import img32_th from '../assets/photos/32_th.jpeg';
-import vd33 from '../assets/photos/33.mp4';
-import img33_th from '../assets/photos/33_th.jpeg';
+// import vd33 from '../assets/photos/33.mp4';
+// import img33_th from '../assets/photos/33_th.jpeg';
 import img99 from '../assets/photos/99.jpeg';
 import img99_th from '../assets/photos/99_th.jpeg';
 
@@ -676,25 +676,25 @@ const photoData = [
         "can_be_voted": false,
         "is_video": false
     },
-    {
-        "photo_id": 33,
-        "photograper": "12권효상(OB)",
-        "title": "Stars On",
-        "location": "대한민국 강원도/경기도",
-        "date": "",
-        "equipment": "Canon EOS 60D",
-        "exposure": "Adobe Lightloom, Premier pro, Photoshop, Startrail, ",
-        "processing": "",
-        "story": "",
-        "file_path": vd33,
-        "thumbnail_path": img33_th,
-        "xPos": -58.5,
-        "yPos": 0,
-        "zPos": -10,
-        "rotation": 131,
-        "can_be_voted": false,
-        "is_video": true
-    },
+    // {
+    //     "photo_id": 33,
+    //     "photograper": "12권효상(OB)",
+    //     "title": "Stars On",
+    //     "location": "대한민국 강원도/경기도",
+    //     "date": "",
+    //     "equipment": "Canon EOS 60D",
+    //     "exposure": "Adobe Lightloom, Premier pro, Photoshop, Startrail, ",
+    //     "processing": "",
+    //     "story": "",
+    //     "file_path": vd33,
+    //     "thumbnail_path": img33_th,
+    //     "xPos": -58.5,
+    //     "yPos": 0,
+    //     "zPos": -10,
+    //     "rotation": 131,
+    //     "can_be_voted": false,
+    //     "is_video": true
+    // },
     {
         "photo_id": 99,
         "photograper": "20학번 신입생 일동",
